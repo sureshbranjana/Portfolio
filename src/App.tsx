@@ -91,7 +91,7 @@ export default function App() {
             {/* Main Image */}
             <div className="relative w-72 h-96 md:w-80 md:h-[28rem] rounded-[100px] overflow-hidden border-8 border-white shadow-2xl bg-white">
               <img 
-                src="/branjana-nobg.png" 
+                src="branjana-nobg.png" 
                 alt="Suresh Branjana" 
                 className="w-full h-full object-cover object-top"
               />
