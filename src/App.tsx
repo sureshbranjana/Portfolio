@@ -88,10 +88,10 @@ export default function App() {
             <div className="absolute -top-10 -left-10 w-32 h-32 border-2 border-orange-300 rounded-full opacity-50"></div>
             <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-purple-200 rounded-full opacity-50"></div>
             
-            {/* Main Image - Using a placeholder, replace with actual image URL if available */}
+            {/* Main Image */}
             <div className="relative w-72 h-96 md:w-80 md:h-[28rem] rounded-[100px] overflow-hidden border-8 border-white shadow-2xl bg-white">
               <img 
-                src="branjana-nobg.png" 
+                src="/branjana-nobg.png" 
                 alt="Suresh Branjana" 
                 className="w-full h-full object-cover object-top"
               />
