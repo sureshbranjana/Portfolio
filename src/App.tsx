@@ -1,8 +1,74 @@
 
 import { ArrowRight, CheckCircle, Code, Database, Github, Linkedin, Mail, Server, Smartphone } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 export default function App() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
+  const projects = [
+    {
+      title: 'Hotel Management System',
+      description:
+        'Desktop application for reservations, employee management, and reporting with an optimized SQL Server backend.',
+      image:
+        'Hotel.png?auto=format&fit=crop&w=1000&q=80',
+      tech: ['C#', 'SQL Server', 'Crystal Reports'],
+    },
+    {
+      title: 'DNS Garment Factory Business System',
+      description:
+        'Web platform for online sales, attendance tracking, and role-based access for garment factory staff.',
+      image:
+        'DNS-Garmnets.jpeg?auto=format&fit=crop&w=1000&q=80',
+      tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL'],
+    },{
+      title: 'FloodNav – Disaster Response Routing System',
+      description:
+        'Routing tool to help rescuers find optimal safe paths during floods using real-time data.',
+      image:
+        'FloodNav.png?auto=format&fit=crop&w=1000&q=80',
+      tech: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Tailwind CSS'],
+    },
+    {
+      title: 'Infora – Multilingual Conversational AI System',
+      description:
+        'Ongoing conversational AI platform for news and government services with multilingual support.',
+      image:
+        'Chat-Page.jpg?auto=format&fit=crop&w=1000&q=80',
+      tech: ['React Native', 'React', 'Tailwind CSS', 'Spring Boot', 'Firebase'],
+    },
+    {
+      title: 'Budgetly – Finance Management Mobile Application',
+      description:
+        'Offline-first budgeting app with client–server sync, savings goals, and detailed reporting.',
+      image:
+        'Budgetly.jpeg?auto=format&fit=crop&w=1000&q=80',
+      imageFit: 'contain',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Firebase Realtime DB'],
+    },
+    {
+      title: 'Pizza Mania Mobile Application',
+      description:
+        'Android app for restaurant order management, menus, and staff operations with offline support.',
+      image:
+        'Pizza-Mania.jpeg?auto=format&fit=crop&w=1000&q=80',
+      imageFit: 'contain',
+      tech: ['Java', 'XML', 'SQLite', 'JSON'],
+    },
+    {
+      title: 'E-Channelling System',
+      description:
+        'Online doctor appointment booking platform with microservice-based backend and modern web UI.',
+      image:
+        'E-channeling-System.jpeg?auto=format&fit=crop&w=1000&q=80',
+      tech: ['Java 17', 'Spring Boot 3', 'React', 'MySQL'],
+    },
+    
+  ];
+
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 4);
+
   return (
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 overflow-x-hidden">
       {/* Navbar */}
@@ -189,9 +255,13 @@ export default function App() {
               </div>
             </div>
 
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-full font-medium hover:bg-gray-900 hover:text-white transition-colors flex items-center gap-2">
+            <a
+              href="/Suresh Branjana.pdf"
+              download
+              className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-full font-medium hover:bg-gray-900 hover:text-white transition-colors"
+            >
               Download My Resume <ArrowRight size={18} />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -335,40 +405,69 @@ export default function App() {
       {/* Featured Projects */}
       <section id="projects" className="py-24 bg-[#f8f9fa]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12">Featured projects</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 1 */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">E-Commerce Platform API</h3>
-                <p className="text-gray-600 mb-4">A robust backend system built with Spring Boot and MySQL, featuring secure authentication, product management, and order processing.</p>
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full">Java</span>
-                  <span className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full">Spring Boot</span>
-                  <span className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full">MySQL</span>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-4xl font-bold">Projects</h2>
+            <p className="text-sm text-gray-500">
+              Showing {visibleProjects.length} of {projects.length} projects
+            </p>
+          </div>
 
-            {/* Project 2 */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 2" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Task Management Dashboard</h3>
-                <p className="text-gray-600 mb-4">A responsive full-stack application using React and Node.js with MongoDB for real-time task tracking and team collaboration.</p>
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full">React</span>
-                  <span className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full">Node.js</span>
-                  <span className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full">MongoDB</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            {visibleProjects.map((project) => (
+              <div
+                key={project.title}
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+              >
+                <div
+                  className={[
+                    'h-64 overflow-hidden flex items-center justify-center',
+                    project.imageFit === 'contain'
+                      ? 'bg-gradient-to-br from-gray-50 to-gray-100'
+                      : 'bg-gray-200',
+                  ].join(' ')}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={[
+                      'transition-transform duration-500',
+                      project.imageFit === 'contain'
+                        ? [
+                            // Mobile screenshots look better like a "phone" preview
+                            'h-[92%] w-auto max-w-[55%] object-contain',
+                            'rounded-2xl',
+                            'shadow-2xl shadow-black/10 ring-1 ring-black/10',
+                            'group-hover:scale-[1.02]',
+                          ].join(' ')
+                        : 'w-full h-full object-cover group-hover:scale-105',
+                    ].join(' ')}
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <button
+              onClick={() => setShowAllProjects((prev) => !prev)}
+              className="px-8 py-3 border border-gray-300 rounded-full text-sm font-medium hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
+            >
+              {showAllProjects ? 'Show fewer projects' : 'View all projects'}
+            </button>
           </div>
         </div>
       </section>
