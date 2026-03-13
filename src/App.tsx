@@ -30,6 +30,14 @@ export default function App() {
         'FloodNav.png?auto=format&fit=crop&w=1000&q=80',
       tech: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Tailwind CSS'],
     },
+     {
+      title: 'E-Channelling System',
+      description:
+        'Online doctor appointment booking platform with microservice-based backend and modern web UI.',
+      image:
+        'E-channeling-System.jpeg?auto=format&fit=crop&w=1000&q=80',
+      tech: ['Java 17', 'Spring Boot 3', 'React', 'MySQL'],
+    },
     {
       title: 'Infora – Multilingual Conversational AI System',
       description:
@@ -56,15 +64,7 @@ export default function App() {
       imageFit: 'contain',
       tech: ['Java', 'XML', 'SQLite', 'JSON'],
     },
-    {
-      title: 'E-Channelling System',
-      description:
-        'Online doctor appointment booking platform with microservice-based backend and modern web UI.',
-      image:
-        'E-channeling-System.jpeg?auto=format&fit=crop&w=1000&q=80',
-      tech: ['Java 17', 'Spring Boot 3', 'React', 'MySQL'],
-    },
-    
+   
   ];
 
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 4);
